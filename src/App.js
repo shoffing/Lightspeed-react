@@ -4,8 +4,6 @@ import { useSocket } from "./context/SocketContext";
 import { useRTC } from "./context/RTCPeerContext";
 import VideoPlayer from "./components/VideoPlayer";
 import VideoDetails from "./components/VideoDetails";
-import LiveChat from "./components/LiveChat";
-import Header from "./components/Header";
 import { VideoContainer, MainContainer } from "./styles/appStyles";
 
 const appReducer = (state, action) => {
@@ -25,7 +23,7 @@ const appReducer = (state, action) => {
 
 const initialState = {
   stream: null,
-  viewers: null,
+  viewers: 0,
 };
 
 const App = () => {
@@ -112,13 +110,11 @@ const App = () => {
 
   return (
     <>
-      <Header></Header>
       <MainContainer>
         <VideoContainer>
           <VideoPlayer src={state.stream} />
           <VideoDetails viewers={state.viewers} />
         </VideoContainer>
-        <LiveChat></LiveChat>
       </MainContainer>
     </>
   );

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Video = styled.video`
-  border-radius: 0px;
-  z-index: 10;
-  width: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
 `;
